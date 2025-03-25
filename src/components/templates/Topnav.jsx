@@ -21,7 +21,7 @@ const Topnav = () => {
   }, [query]);
 
   return (
-    <div className="w-full h-[10vh] flex justify-center items-center">
+    <div className="w-full relative h-[10vh] flex justify-center items-center">
       <div className="w-[62%] flex items-center justify-start">
         <i className="text-3xl text-zinc-400 ri-search-line"></i>
         <input
@@ -39,7 +39,7 @@ const Topnav = () => {
         )}
       </div>
 
-      <div className="absolute w-[40%] rounded max-h-[50vh] bg-zinc-200 top-[10%] left-[39.75%] overflow-auto">
+      <div className="absolute w-[50%] rounded max-h-[50vh] bg-zinc-200 top-[90%] overflow-auto">
         {searches.map((s, i) => (
           <Link
             key={i}

@@ -11,19 +11,31 @@ const Sidenav = () => {
 
       <nav className="flex flex-col text-xl gap-3 text-zinc-400">
         <h1 className="text-xl text-white font-semibold mt-8 mb-3">New Feed</h1>
-        <Link className="hover:bg-[#6556cd] hover:text-white duration-300 rounded-lg px-5 py-2">
+        <Link
+          to="/trending"
+          className="hover:bg-[#6556cd] hover:text-white duration-300 rounded-lg px-5 py-2"
+        >
           <i className="mr-2 ri-fire-fill"></i>
           Trending
         </Link>
-        <Link className="hover:bg-[#6556cd] hover:text-white duration-300 rounded-lg px-5 py-2">
+        <Link
+          to="/popular"
+          className="hover:bg-[#6556cd] hover:text-white duration-300 rounded-lg px-5 py-2"
+        >
           <i className="ri-bard-fill mr-2"></i>
           Popular
         </Link>
-        <Link className="hover:bg-[#6556cd] hover:text-white duration-300 rounded-lg px-5 py-2">
+        <Link
+          to="/movies"
+          className="hover:bg-[#6556cd] hover:text-white duration-300 rounded-lg px-5 py-2"
+        >
           <i className="ri-movie-2-fill mr-2"></i>
           Movies
         </Link>
-        <Link className="hover:bg-[#6556cd] hover:text-white duration-300 rounded-lg px-5 py-2">
+        <Link
+          to="tvshows"
+          className="hover:bg-[#6556cd] hover:text-white duration-300 rounded-lg px-5 py-2"
+        >
           <i className="ri-tv-2-fill mr-2"></i>
           Tv Shows
         </Link>
@@ -44,7 +56,7 @@ const Sidenav = () => {
           About
         </Link>
         <Link className="hover:bg-[#6556cd] hover:text-white duration-300 rounded-lg px-5 py-2">
-        <i className=" mr-2 ri-phone-fill"></i>
+          <i className=" mr-2 ri-phone-fill"></i>
           Contact
         </Link>
       </nav>
