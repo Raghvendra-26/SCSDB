@@ -7,18 +7,18 @@ import Cards from "./templates/Cards";
 import Loading from "./Loading";
 import InfiniteScroll from "react-infinite-scroll-component";
 
-const Movie = () => {
-  const [category, setCategory] = useState("now_playing");
-  const [movie, setMovie] = useState([]);
+const People = () => {
+  const [category, setCategory] = useState("popular");
+  const [people, setPeople] = useState([]);
   const [page, setPage] = useState(1);
   const [hasMore, setHasMore] = useState(true);
-  document.title = "SCSDB | Movies ";
+  document.title = "SCSDB | People ";
   const navigate = useNavigate();
 
-  const getMovie = async () => {
+  const getTVshows = async () => {
     try {
-      const { data } = await axios.get(`/movie/${category}?page=${page}`);
-      setMovie((prevMovie) => [...prevMovie, ...data.results]);
+      const { data } = await axios.get(`/person/${category}?page=${page}`);
+      setPeople((prevPeople) => [...prevPeople, ...data.results]);
       setPage(page + 1);
       if (data.results.length === 0) setHasMore(false);
       // console.log(data);
@@ -28,13 +28,13 @@ const Movie = () => {
   };
 
   useEffect(() => {
-    setMovie([]); // Clear previous data
+    setPeople([]); // Clear previous data
     setPage(1); // Reset page to 1
     setHasMore(true);
-    getMovie();
+    getTVshows();
   }, [category]);
 
-  return movie.length > 0 ? (
+  return people.length > 0 ? (
     <div className="w-screen h-screen py-[1%]">
       <div className="w-full flex items-center px-[3%]">
         <h1 className="text-2xl font-semibold text-zinc-400 flex items-end gap-2">
@@ -42,24 +42,20 @@ const Movie = () => {
             onClick={() => navigate(-1)}
             className="ri-arrow-left-line hover:text-[#6556cd] mr-3"
           ></i>
-          Movie <small className="text-sm text-zinc-600">({category})</small>
+          People
         </h1>
 
         <Topnav />
-        <Dropdown
-          title="Category"
-          options={["popular", "top_rated", "upcoming","now_playing"]}
-          func={(e) => setCategory(e.target.value)}
-        />
+
       </div>
 
       <InfiniteScroll
-        dataLength={movie.length}
-        next={getMovie}
+        dataLength={people.length}
+        next={getTVshows}
         hasMore={hasMore}
         loader={<h1>Loading...</h1>}
       >
-        <Cards data={movie} title="movie" />
+        <Cards data={people} title="person" />
       </InfiniteScroll>
     </div>
   ) : (
@@ -67,4 +63,4 @@ const Movie = () => {
   );
 };
 
-export default Movie;
+export default People;

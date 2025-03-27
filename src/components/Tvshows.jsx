@@ -21,7 +21,7 @@ const Tvshows = () => {
       setTv((prevTVshow) => [...prevTVshow, ...data.results]);
       setPage(page + 1);
       if (data.results.length === 0) setHasMore(false);
-      console.log(data);
+      // console.log(data);
     } catch (error) {
       console.log("Error: ", error);
     }
@@ -59,7 +59,7 @@ const Tvshows = () => {
         hasMore={hasMore}
         loader={<h1>Loading...</h1>}
       >
-        <Cards data={tv} title={category} />
+        <Cards data={tv} title="tv" />
       </InfiniteScroll>
     </div>
   ) : (
