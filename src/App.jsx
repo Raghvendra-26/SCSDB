@@ -7,7 +7,7 @@ import Movie from "./components/Movie";
 import Tvshows from "./components/Tvshows";
 import People from "./components/People";
 import Trailer from "./components/templates/Trailer";
-import MovieDetails from "./components/movieDetails";
+import MovieDetails from "./components/MovieDetails";
 import NotFound from "./components/NotFound";
 import TvDetails from "./components/tvDetails";
 import PersonDetails from "./components/personDetails";
