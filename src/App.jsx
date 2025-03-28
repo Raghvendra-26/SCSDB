@@ -9,8 +9,8 @@ import People from "./components/People";
 import Trailer from "./components/templates/Trailer";
 import MovieDetails from "./components/MovieDetails";
 import NotFound from "./components/NotFound";
-import TvDetails from "./components/tvDetails";
-import PersonDetails from "./components/personDetails";
+import TvDetails from "./components/TvDetails";
+import PersonDetails from "./components/PersonDetails";
 
 function App() {
   return (
