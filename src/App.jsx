@@ -6,11 +6,11 @@ import Popular from "./components/Popular";
 import Movie from "./components/Movie";
 import Tvshows from "./components/Tvshows";
 import People from "./components/People";
-import PersonDetails from "./components/PersonDetails";
 import Trailer from "./components/templates/Trailer";
 import MovieDetails from "./components/movieDetails";
 import NotFound from "./components/NotFound";
 import TvDetails from "./components/tvDetails";
+import PersonDetails from "./components/personDetails";
 
 function App() {
   return (
